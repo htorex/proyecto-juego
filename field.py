@@ -4,6 +4,7 @@ from settings import LATERAL_SIZE
 from settings import SUP_SIZE
 from settings import WHITE
 from settings import FIELD_ZISE
+from settings import RED
 
 
 class LeftField(pygame.sprite.Sprite):
@@ -27,7 +28,7 @@ class LeftField(pygame.sprite.Sprite):
         pygame.draw.rect(self.surface, WHITE, [25, 25, 700,700], 0)
 
     
-    def Draw(self, surface):
+    def draw(self, surface):
         
 
         self.rect.x = self.pos_x
@@ -53,11 +54,11 @@ class SupField(pygame.sprite.Sprite):
         self.surface = pygame.Surface(SUP_SIZE, pygame.SRCALPHA, 32)
         self.rect = self.surface.get_rect()
 
-        self.surface.fill(WHITE)
-        pygame.draw.rect(self.surface, WHITE, [250, 250, 25,25], 0)
+        self.surface.fill(RED)
+        pygame.draw.rect(self.surface, RED, [250, 250, 25,25], 0)
 
     
-    def Draw(self, surface):
+    def draw(self, surface):
         
 
         self.rect.x = self.pos_x

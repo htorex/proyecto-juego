@@ -21,7 +21,7 @@ class Bullet(pygame.sprite.Sprite):
         self.pos_x = width_bullet
         self.pos_y = height_bullet
         
-        self.speed = 100
+        self.speed = 10
         self.dir_x = random.choice([-5, 5])
         self.dir_y = random.choice([-5, 5])
 

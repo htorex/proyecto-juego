@@ -33,7 +33,7 @@ LATERAL_SIZE = (width_lateral, height_lateral)
 
 # Superior e Inferior
 
-width_sup = 170
+width_sup = 100
 height_sup = 8
 
 SUP_SIZE = (width_sup, height_sup)
@@ -51,3 +51,7 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 RED = (255, 0, 50)
 YELLOW = (255, 255, 0)
+
+
+# Fuentes Letras
+

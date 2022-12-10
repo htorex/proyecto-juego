@@ -39,6 +39,7 @@ class Enemy(pygame.sprite.Sprite):
 
         surface.blit(self.surface, self.rect)
 
+
     def up(self):
         self.pos_y -= 1
 

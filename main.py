@@ -6,6 +6,7 @@ from hero import Player
 from bullet import Bullet
 from enemy import Enemy
 from field import Field
+from field import SupField
 from settings import SIZE
 from settings import WHITE
 
@@ -20,8 +21,9 @@ screen = pygame.display.set_mode(SIZE)
 pygame.display.set_caption("Proyecto")
 
 clock = pygame.time.Clock()
-
 field_C = Field(39,22)
+field_sup = SupField(200,20)
+field_inf = SupField(200, 570)
 
 player = Player(250, 390)
 enemy = Enemy(200, 150)
@@ -32,7 +34,7 @@ background = pygame.image.load("asset/fut1.png").convert()
 
 
 while game:
-    clock.tick(200)  
+    clock.tick(5)  
     
 
     for event in pygame.event.get():
@@ -83,6 +85,9 @@ while game:
     screen.fill(WHITE)
     screen.blit(background,[0, 0])
     
+    # Zona Punto
+    field_sup.draw(screen)
+    field_inf.draw(screen)
 
     # Jugadores
     player.draw(screen)
