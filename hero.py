@@ -1,5 +1,6 @@
 import pygame
 
+from bullet import Bullet
 
 from settings import GREEN
 from settings import SIZE_PLAYER
@@ -20,7 +21,7 @@ class Player(pygame.sprite.Sprite):
         self.pos_x = pos_x
         self.pos_y = pos_y
         
-        self.speed = 300
+        self.speed = 700
         self.direction = 0
         
         self.surface = pygame.Surface(SIZE_PLAYER, pygame.SRCALPHA, 32)
@@ -43,19 +44,19 @@ class Player(pygame.sprite.Sprite):
         
     
     def up(self):
-        self.pos_y -= 1
+        self.pos_y -= 2
 
 
     def down(self):
-        self.pos_y += 1
+        self.pos_y += 2
 
 
     def rigth(self):
-        self.pos_x += 1
+        self.pos_x += 2
 
 
     def left(self):
-        self.pos_x -= 1
+        self.pos_x -= 2
 
 
     def move(self):
@@ -86,3 +87,19 @@ class Player(pygame.sprite.Sprite):
 
         if self.pos_y >= (height -height_player):
             self.pos_y = height - height_player
+
+
+    def touch(self, Bullet):
+
+         if (
+             Bullet.pos_x < self.pos_x + self.heigth
+             and Bullet.pos_x > self.pos_x
+             and Bullet.pos_y + Bullet.width > self.pos_y
+             and Bullet.pos_y < self.pos_y + self.width
+         ):
+             Bullet.dir_x = -Bullet.dir_x
+             Bullet.pos_x = self.pos_x + self.heigth
+        
+        
+
+        

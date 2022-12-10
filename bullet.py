@@ -18,10 +18,10 @@ class Bullet(pygame.sprite.Sprite):
         self.width = width_bullet
         self.heigth = height_bullet
 
-        self.pos_x = width_bullet
-        self.pos_y = height_bullet
+        self.pos_x = pos_x
+        self.pos_y = pos_y
         
-        self.speed = 10
+        self.speed = 30
         self.dir_x = random.choice([-5, 5])
         self.dir_y = random.choice([-5, 5])
 
@@ -36,8 +36,8 @@ class Bullet(pygame.sprite.Sprite):
     def draw(self, surface):
         
 
-        self.rect.x = self.dir_x
-        self.rect.y = self.dir_y
+        self.rect.x = self.pos_x
+        self.rect.y = self.pos_y
 
 
         surface.blit(self.surface, self.rect)
@@ -57,16 +57,13 @@ class Bullet(pygame.sprite.Sprite):
         if self.pos_x >= 39:
             self.dir_x = -self.dir_x
 
-        if self.pos_x + width_bullet <= width_field:
+        if self.pos_x <= width_field:
             self.dir_x = -self.dir_x
 
         if self.pos_y >= 22:
             self.dir_y = -self.dir_y
         
-        if self.pos_y + height_bullet <= height_field:
+        if self.pos_y <= height_field:
             self.dir_y = -self.dir_y
 
-
-    def touch(self):
-
-        pass
+    

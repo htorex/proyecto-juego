@@ -21,7 +21,7 @@ class Enemy(pygame.sprite.Sprite):
         self.pos_x = pos_x
         self.pos_y = pos_y
         
-        self.speed = 300
+        self.speed = 700
         self.direction = 0
         
         self.surface = pygame.Surface(SIZE_ENEMY, pygame.SRCALPHA, 32)
@@ -41,19 +41,19 @@ class Enemy(pygame.sprite.Sprite):
 
 
     def up(self):
-        self.pos_y -= 1
+        self.pos_y -= 2
 
 
     def down(self):
-        self.pos_y += 1
+        self.pos_y += 2
 
 
     def rigth(self):
-        self.pos_x += 1
+        self.pos_x += 2
 
 
     def left(self):
-        self.pos_x -= 1
+        self.pos_x -= 2
 
 
     def move(self):
@@ -84,4 +84,15 @@ class Enemy(pygame.sprite.Sprite):
 
         if self.pos_y >= (height - height_enemy):
             self.pos_y = height - height_enemy
+
+    def touch(self, Bullet):
+
+         if (
+             Bullet.pos_y < self.pos_y + self.heigth
+             and Bullet.pos_y > self.pos_y
+             and Bullet.pos_x + Bullet.width > self.pos_x
+             and Bullet.pos_x < self.pos_x + self.width
+         ):
+             Bullet.dir_y = -Bullet.dir_y
+             Bullet.pos_y = self.pos_y + self.heigth
 
