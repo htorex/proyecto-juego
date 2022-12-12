@@ -25,7 +25,7 @@ game = True
 screen = pygame.display.set_mode(SIZE)
 
 
-pygame.display.set_caption("Proyecto")
+pygame.display.set_caption("HokeyFut")
 
 clock = pygame.time.Clock()
 # Campo
@@ -39,8 +39,8 @@ enemy = Enemy(200, 150)
 bullet = Bullet(240, 285)
 
 #Puntuacion
-puntosup = 0
-puntobajo = 0
+puntosup = -1
+puntobajo = -1
 
 score_txt = int(score.archivo())
 
