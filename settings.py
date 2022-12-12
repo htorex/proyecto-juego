@@ -1,5 +1,7 @@
 import pygame
 
+pygame.font.init()
+
 # medidas de pantalla
 width = 500
 height = 700
@@ -56,7 +58,7 @@ YELLOW = (255, 255, 0)
 
 
 # Fuentes Letras
-#fuente1 = pygame.font.SysFont("arial", 20, False, False)
-#fuente2 = pygame.font.SysFont("arial", 20, True, False)
-
-pygame.init()
+fuente1 = pygame.font.Font(None, 50)
+fuente2 = pygame.font.Font(None, 50)
+font = pygame.font.SysFont('Consolas', 30)
+#pygame.init()

@@ -94,7 +94,7 @@ class Player(pygame.sprite.Sprite):
          if (
              Bullet.pos_x < self.pos_x + self.heigth
              and Bullet.pos_x > self.pos_x
-             and Bullet.pos_y + Bullet.width > self.pos_y
+             and Bullet.pos_y + Bullet.heigth > self.pos_y
              and Bullet.pos_y < self.pos_y + self.width
          ):
              Bullet.dir_x = -Bullet.dir_x

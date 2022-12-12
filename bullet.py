@@ -25,7 +25,13 @@ class Bullet(pygame.sprite.Sprite):
         self.dir_x = random.choice([-5, 5])
         self.dir_y = random.choice([-5, 5])
 
-        
+        self.punto_sup = 0
+        self.punto_bajo = 0
+
+        self.toc_up = True
+        self.toc_dow = True
+
+
         self.surface = pygame.Surface(SIZE_BULLET, pygame.SRCALPHA, 32)
         self.rect = self.surface.get_rect()
         
