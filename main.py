@@ -146,7 +146,7 @@ while game:
         player.touch(bullet)
         enemy.touch(bullet)
 
-        if score_txt < (puntosup + puntobajo):
+        if (puntosup + puntobajo) > score_txt:
             screen.blit(font.render("Se hicieron mas goles ", True, GREEN), (120, 660))
 
                 
